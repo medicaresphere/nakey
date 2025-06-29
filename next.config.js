@@ -67,22 +67,6 @@ const nextConfig = {
       },
     ];
   },
-  
-  // Redirects for SEO
-  async redirects() {
-    return [
-      {
-        source: '/tools/:slug',
-        destination: '/ai/:slug',
-        permanent: true,
-      },
-      {
-        source: '/tool/:slug',
-        destination: '/ai/:slug',
-        permanent: true,
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;
