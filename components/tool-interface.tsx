@@ -14,7 +14,6 @@ import {
   Monitor,
   Github,
   Apple,
-  CheckCircle,
   Crown,
   Zap,
   Heart
@@ -125,9 +124,35 @@ export function ToolInterface({ tool, similarTools = [], className }: ToolInterf
 
         {/* Right Side - Tool Information */}
         <div className="space-y-6">
+          {/* Title */}
           <div>
             <h1 className="text-3xl font-bold text-white mb-2">{tool.name}</h1>
-            <p className="text-zinc-400 text-sm uppercase tracking-wider">{tool.url.replace('https://', '').replace('http://', '')}</p>
+          </div>
+
+          {/* Quick Overview */}
+          <div>
+            <h3 className="text-white font-semibold mb-3">Quick Overview:</h3>
+            <p className="text-zinc-300 leading-relaxed">
+              {tool.description}
+            </p>
+          </div>
+
+          {/* Pricing */}
+          <div>
+            <h3 className="text-white font-semibold mb-3">
+              Pricing: <span className="text-2xl font-bold ml-2">{formatPrice(tool.pricing)}</span>
+            </h3>
+            {tool.pricing === 'freemium' && (
+              <div className="mt-2 p-3 bg-pink-500/20 border border-pink-500/30 rounded-lg">
+                <p className="text-pink-400 text-sm">
+                  Enjoy <span className="font-bold">100 Free Tokens</span> with Every New Subscription!
+                </p>
+              </div>
+            )}
+            {/* Admin-style pricing details */}
+            <div className="mt-2 text-sm text-zinc-400">
+              <span className="font-mono">{getPricingDetails(tool.pricing)}</span>
+            </div>
           </div>
 
           {/* Platform Compatibility */}
@@ -158,33 +183,6 @@ export function ToolInterface({ tool, similarTools = [], className }: ToolInterf
                 </div>
                 <span className="text-sm">GitHub</span>
               </div>
-            </div>
-          </div>
-
-          {/* Quick Overview */}
-          <div>
-            <h3 className="text-white font-semibold mb-3">Quick Overview:</h3>
-            <p className="text-zinc-300 leading-relaxed">
-              {tool.description}
-            </p>
-          </div>
-
-          {/* Pricing */}
-          <div>
-            <h3 className="text-white font-semibold mb-3">Pricing:</h3>
-            <div className="text-2xl font-bold text-white mb-2">
-              {formatPrice(tool.pricing)}
-            </div>
-            {tool.pricing === 'freemium' && (
-              <div className="mt-2 p-3 bg-pink-500/20 border border-pink-500/30 rounded-lg">
-                <p className="text-pink-400 text-sm">
-                  Enjoy <span className="font-bold">100 Free Tokens</span> with Every New Subscription!
-                </p>
-              </div>
-            )}
-            {/* Admin-style pricing details */}
-            <div className="mt-2 text-sm text-zinc-400">
-              <span className="font-mono">{getPricingDetails(tool.pricing)}</span>
             </div>
           </div>
 
@@ -230,71 +228,6 @@ export function ToolInterface({ tool, similarTools = [], className }: ToolInterf
           </div>
         </div>
       </div>
-
-      {/* Detailed Information */}
-      <Card className="glass-card border-white/10">
-        <CardHeader>
-          <h2 className="text-2xl font-bold text-white">Detailed Information</h2>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {tool.features && tool.features.length > 0 && (
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Features:</h3>
-              <ul className="space-y-2">
-                {tool.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3 text-zinc-300">
-                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Benefits:</h3>
-              <ul className="space-y-2 text-zinc-300">
-                <li>• Advanced AI technology for realistic interactions</li>
-                <li>• Customizable personalities and appearances</li>
-                <li>• Privacy-focused with secure conversations</li>
-                <li>• Regular updates and new features</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Technical Specifications:</h3>
-              <ul className="space-y-2 text-zinc-300">
-                <li>• Cloud-based processing</li>
-                <li>• Real-time response generation</li>
-                <li>• Multi-language support</li>
-                <li>• Cross-platform compatibility</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 pt-4 text-sm text-zinc-400">
-            <div className="flex items-center gap-1">
-              <Eye className="w-4 h-4" />
-              <span>{(tool.views || 0).toLocaleString()} views</span>
-            </div>
-            {tool.rating && (
-              <div className="flex items-center gap-1">
-                <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                <span>{tool.rating.toFixed(1)} ({tool.review_count || 0} reviews)</span>
-              </div>
-            )}
-            <Badge 
-              variant="secondary" 
-              className={cn('text-xs font-medium border', getPricingColor(tool.pricing))}
-            >
-              <div className="flex items-center gap-1">
-                {getPricingIcon(tool.pricing)}
-                {tool.pricing}
-              </div>
-            </Badge>
-          </div>
-        </CardContent>
-      </Card>
 
       {/* Similar Tools */}
       {similarTools.length > 0 && (

@@ -59,6 +59,7 @@ export function EnhancedAdminPanel() {
     name: '',
     slug: '',
     description: '',
+    quick_description: '',
     url: '',
     category: '',
     pricing: 'freemium',
@@ -98,7 +99,6 @@ export function EnhancedAdminPanel() {
 
       if (toolsError) {
         console.error('Error loading tools:', toolsError);
-        // Create some demo tools if table is empty
         if (toolsError.code === '42P01') {
           console.log('Tools table does not exist, using demo data');
           setTools([]);
@@ -182,14 +182,6 @@ export function EnhancedAdminPanel() {
     }));
   };
 
-  const handleToolDescriptionChange = (description: string) => {
-    setToolFormData(prev => ({
-      ...prev,
-      description,
-      seo_description: description.length <= 160 ? description : description.substring(0, 157) + '...'
-    }));
-  };
-
   const handleCategoryNameChange = (name: string) => {
     setCategoryFormData(prev => ({
       ...prev,
@@ -266,6 +258,7 @@ export function EnhancedAdminPanel() {
         name: '',
         slug: '',
         description: '',
+        quick_description: '',
         url: '',
         category: '',
         pricing: 'freemium',
@@ -339,6 +332,7 @@ export function EnhancedAdminPanel() {
       name: tool.name,
       slug: tool.slug,
       description: tool.description,
+      quick_description: tool.quick_description || '',
       url: tool.url,
       category: tool.category,
       pricing: tool.pricing,
@@ -347,7 +341,7 @@ export function EnhancedAdminPanel() {
       tags: tool.tags || [],
       screenshot_url: tool.screenshot_url || '',
       seo_title: tool.seo_title || tool.name,
-      seo_description: tool.seo_description || tool.description,
+      seo_description: tool.seo_description || '',
     });
   };
 
@@ -404,6 +398,7 @@ export function EnhancedAdminPanel() {
       name: '',
       slug: '',
       description: '',
+      quick_description: '',
       url: '',
       category: '',
       pricing: 'freemium',
@@ -557,12 +552,25 @@ export function EnhancedAdminPanel() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="tool-description" className="text-white">Description *</Label>
+                    <Label htmlFor="quick-description" className="text-white">Quick Description *</Label>
+                    <Textarea
+                      id="quick-description"
+                      value={toolFormData.quick_description || ''}
+                      onChange={(e) => setToolFormData(prev => ({ ...prev, quick_description: e.target.value }))}
+                      placeholder="Brief description for the overview section (2-3 sentences)"
+                      rows={2}
+                      className="glass-card border-white/10 bg-white/5 text-white resize-none"
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="tool-description" className="text-white">Full Description *</Label>
                     <Textarea
                       id="tool-description"
                       value={toolFormData.description || ''}
-                      onChange={(e) => handleToolDescriptionChange(e.target.value)}
-                      placeholder="Describe the AI tool..."
+                      onChange={(e) => setToolFormData(prev => ({ ...prev, description: e.target.value }))}
+                      placeholder="Detailed description of the AI tool..."
                       rows={3}
                       className="glass-card border-white/10 bg-white/5 text-white resize-none"
                       required
@@ -599,7 +607,7 @@ export function EnhancedAdminPanel() {
                           id="seo-description"
                           value={toolFormData.seo_description || ''}
                           onChange={(e) => setToolFormData(prev => ({ ...prev, seo_description: e.target.value }))}
-                          placeholder="SEO meta description"
+                          placeholder="Write your own SEO meta description"
                           rows={3}
                           className="glass-card border-white/10 bg-white/5 text-white resize-none"
                           maxLength={160}

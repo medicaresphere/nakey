@@ -7,6 +7,7 @@ export interface Database {
           name: string;
           slug: string;
           description: string;
+          quick_description?: string;
           url: string;
           is_nsfw: boolean;
           pricing: string;
@@ -32,6 +33,7 @@ export interface Database {
           name: string;
           slug: string;
           description: string;
+          quick_description?: string;
           url: string;
           is_nsfw?: boolean;
           pricing?: string;
@@ -57,6 +59,7 @@ export interface Database {
           name?: string;
           slug?: string;
           description?: string;
+          quick_description?: string;
           url?: string;
           is_nsfw?: boolean;
           pricing?: string;
@@ -221,6 +224,7 @@ export interface Database {
           name: string;
           url: string;
           description: string;
+          quick_description?: string;
           category: string;
           pricing: string;
           is_nsfw: boolean;
@@ -238,6 +242,7 @@ export interface Database {
           name: string;
           url: string;
           description: string;
+          quick_description?: string;
           category: string;
           pricing: string;
           is_nsfw?: boolean;
@@ -255,6 +260,7 @@ export interface Database {
           name?: string;
           url?: string;
           description?: string;
+          quick_description?: string;
           category?: string;
           pricing?: string;
           is_nsfw?: boolean;
