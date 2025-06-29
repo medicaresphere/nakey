@@ -1,55 +1,51 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { getTools, getTags } from '@/lib/supabase';
+import { generateHomeSEO, generateOrganizationSchema } from '@/lib/seo';
 import { Navigation } from '@/components/navigation';
 import { HomePage } from '@/components/pages/home-page';
+import { StructuredDataComponent } from '@/components/seo/structured-data';
 
-export const metadata: Metadata = {
-  title: 'NSFW AI Tools Directory - Best Adult AI Apps & Services',
-  description: 'Discover the best NSFW AI tools, adult chatbots, image generators, and more. Comprehensive directory of AI-powered adult services with reviews and comparisons.',
-  openGraph: {
-    title: 'NSFW AI Tools Directory - Best Adult AI Apps & Services',
-    description: 'Discover the best NSFW AI tools, adult chatbots, image generators, and more.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'NSFW AI Tools Directory - Best Adult AI Apps & Services',
-    description: 'Discover the best NSFW AI tools, adult chatbots, image generators, and more.',
-  },
-};
+export const metadata: Metadata = generateHomeSEO();
 
-export const revalidate = 3600; // Revalidate every hour
+export const revalidate = 3600;
 
 export default async function RootPage() {
   try {
-    // Fetch initial data for the home page
     const [initialTools, availableTags] = await Promise.all([
       getTools({ limit: 50, status: 'published' }),
       getTags()
     ]);
 
+    // Generate structured data
+    const organizationSchema = generateOrganizationSchema();
+
     return (
-      <div className="min-h-screen">
-        <Navigation />
-        <HomePage 
-          initialTools={initialTools} 
-          availableTags={availableTags} 
-        />
-      </div>
+      <>
+        <StructuredDataComponent data={organizationSchema} />
+        <div className="min-h-screen">
+          <Navigation />
+          <HomePage 
+            initialTools={initialTools} 
+            availableTags={availableTags} 
+          />
+        </div>
+      </>
     );
   } catch (error) {
     console.error('Error loading home page data:', error);
     
-    // Fallback to empty data if there's an error
     return (
-      <div className="min-h-screen">
-        <Navigation />
-        <HomePage 
-          initialTools={[]} 
-          availableTags={[]} 
-        />
-      </div>
+      <>
+        <StructuredDataComponent data={generateOrganizationSchema()} />
+        <div className="min-h-screen">
+          <Navigation />
+          <HomePage 
+            initialTools={[]} 
+            availableTags={[]} 
+          />
+        </div>
+      </>
     );
   }
 }
