@@ -73,150 +73,163 @@ export function ToolInterface({ tool, similarTools = [], className }: ToolInterf
     }
   };
 
+  const getPricingDetails = (pricing: string) => {
+    switch (pricing.toLowerCase()) {
+      case 'free':
+        return 'free - $0.00';
+      case 'freemium':
+        return 'freemium - $0.00 + premium features';
+      case 'paid':
+        return 'paid - $19.99';
+      case 'subscription':
+        return 'subscription - $5.99/month';
+      default:
+        return 'contact - pricing varies';
+    }
+  };
+
   return (
     <div className={cn('max-w-6xl mx-auto space-y-8', className)}>
-      {/* Main Tool Card */}
-      <Card className="glass-card border-white/10 overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Side - Tool Image */}
-          <div className="relative">
-            {tool.screenshot_url && (
-              <div className="aspect-video bg-gradient-to-br from-zinc-800 to-zinc-900 overflow-hidden rounded-lg">
-                <img
-                  src={tool.screenshot_url}
-                  alt={tool.name}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-                {/* Overlay with tool logo */}
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <div className="text-center">
-                    <h2 className="text-4xl font-bold text-white mb-2">{tool.name}</h2>
-                    <div className="flex items-center justify-center gap-2">
-                      {tool.is_nsfw && (
-                        <>
-                          <Badge className="bg-pink-500 text-white">Editor's Pick</Badge>
-                          <Badge className="bg-purple-500 text-white">Personalized</Badge>
-                          <Badge className="bg-blue-500 text-white">Realistic</Badge>
-                        </>
-                      )}
-                    </div>
+      {/* Main Tool Card - No background/border */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Left Side - 16:9 Tool Image */}
+        <div className="relative">
+          {tool.screenshot_url && (
+            <div className="aspect-video overflow-hidden rounded-lg">
+              <img
+                src={tool.screenshot_url}
+                alt={tool.name}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+              {/* Overlay with tool logo */}
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div className="text-center">
+                  <h2 className="text-4xl font-bold text-white mb-2">{tool.name}</h2>
+                  <div className="flex items-center justify-center gap-2">
+                    {tool.is_nsfw && (
+                      <>
+                        <Badge className="bg-pink-500 text-white">Editor's Pick</Badge>
+                        <Badge className="bg-purple-500 text-white">Personalized</Badge>
+                        <Badge className="bg-blue-500 text-white">Realistic</Badge>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
-            )}
+            </div>
+          )}
+        </div>
+
+        {/* Right Side - Tool Information */}
+        <div className="space-y-6">
+          <div>
+            <h1 className="text-3xl font-bold text-white mb-2">{tool.name}</h1>
+            <p className="text-zinc-400 text-sm uppercase tracking-wider">{tool.url.replace('https://', '').replace('http://', '')}</p>
           </div>
 
-          {/* Right Side - Tool Information */}
-          <CardContent className="p-8 space-y-6">
-            <div>
-              <h1 className="text-3xl font-bold text-white mb-2">{tool.name}</h1>
-              <p className="text-zinc-400 text-sm uppercase tracking-wider">{tool.url.replace('https://', '').replace('http://', '')}</p>
-            </div>
-
-            {/* Platform Compatibility */}
-            <div>
-              <h3 className="text-white font-semibold mb-3">Platform Compatibility:</h3>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 text-zinc-400">
-                  <div className="w-6 h-6 bg-zinc-700 rounded flex items-center justify-center">
-                    <Smartphone className="w-4 h-4" />
-                  </div>
-                  <span className="text-sm">Android</span>
+          {/* Platform Compatibility */}
+          <div>
+            <h3 className="text-white font-semibold mb-3">Platform Compatibility:</h3>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 text-zinc-400">
+                <div className="w-6 h-6 bg-zinc-700 rounded flex items-center justify-center">
+                  <Smartphone className="w-4 h-4" />
                 </div>
-                <div className="flex items-center gap-2 text-zinc-400">
-                  <div className="w-6 h-6 bg-zinc-700 rounded flex items-center justify-center">
-                    <Apple className="w-4 h-4" />
-                  </div>
-                  <span className="text-sm">iOS</span>
+                <span className="text-sm">Android</span>
+              </div>
+              <div className="flex items-center gap-2 text-zinc-400">
+                <div className="w-6 h-6 bg-zinc-700 rounded flex items-center justify-center">
+                  <Apple className="w-4 h-4" />
                 </div>
-                <div className="flex items-center gap-2 text-zinc-400">
-                  <div className="w-6 h-6 bg-zinc-700 rounded flex items-center justify-center">
-                    <Monitor className="w-4 h-4" />
-                  </div>
-                  <span className="text-sm">Windows PC</span>
+                <span className="text-sm">iOS</span>
+              </div>
+              <div className="flex items-center gap-2 text-zinc-400">
+                <div className="w-6 h-6 bg-zinc-700 rounded flex items-center justify-center">
+                  <Monitor className="w-4 h-4" />
                 </div>
-                <div className="flex items-center gap-2 text-zinc-400">
-                  <div className="w-6 h-6 bg-zinc-700 rounded flex items-center justify-center">
-                    <Github className="w-4 h-4" />
-                  </div>
-                  <span className="text-sm">GitHub</span>
+                <span className="text-sm">Windows PC</span>
+              </div>
+              <div className="flex items-center gap-2 text-zinc-400">
+                <div className="w-6 h-6 bg-zinc-700 rounded flex items-center justify-center">
+                  <Github className="w-4 h-4" />
                 </div>
+                <span className="text-sm">GitHub</span>
               </div>
             </div>
+          </div>
 
-            {/* Quick Overview */}
-            <div>
-              <h3 className="text-white font-semibold mb-3">Quick Overview:</h3>
-              <p className="text-zinc-300 leading-relaxed">
-                {tool.description}
-              </p>
+          {/* Quick Overview */}
+          <div>
+            <h3 className="text-white font-semibold mb-3">Quick Overview:</h3>
+            <p className="text-zinc-300 leading-relaxed">
+              {tool.description}
+            </p>
+          </div>
+
+          {/* Pricing */}
+          <div>
+            <h3 className="text-white font-semibold mb-3">Pricing:</h3>
+            <div className="text-2xl font-bold text-white mb-2">
+              {formatPrice(tool.pricing)}
             </div>
-
-            {/* Pricing */}
-            <div>
-              <h3 className="text-white font-semibold mb-3">Pricing:</h3>
-              <div className="text-2xl font-bold text-white">
-                {formatPrice(tool.pricing)}
-              </div>
-              {tool.pricing === 'freemium' && (
-                <div className="mt-2 p-3 bg-pink-500/20 border border-pink-500/30 rounded-lg">
-                  <p className="text-pink-400 text-sm">
-                    Enjoy <span className="font-bold">100 Free Tokens</span> with Every New Subscription!
-                  </p>
-                </div>
-              )}
-              <div className="mt-2 space-y-1 text-sm text-zinc-400">
-                <div><span className="text-purple-400">SUBSCRIPTION TYPE:</span> FREEMIUM AND PAID</div>
-                <div><span className="text-purple-400">BILLING OPTIONS:</span> MONTHLY, ANNUALLY, AND ONE-TIME PAYMENT</div>
-              </div>
-            </div>
-
-            {/* Categories */}
-            <div>
-              <h3 className="text-white font-semibold mb-3">Categories:</h3>
-              <Link href={`/category/${tool.category}`}>
-                <Badge 
-                  variant="secondary" 
-                  className="bg-blue-500/20 text-blue-400 border-blue-500/30 hover:bg-blue-500/30 cursor-pointer"
-                >
-                  {tool.category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                </Badge>
-              </Link>
-            </div>
-
-            {/* Tags */}
-            {tool.tags && tool.tags.length > 0 && (
-              <div>
-                <h3 className="text-white font-semibold mb-3">Tags:</h3>
-                <div className="flex flex-wrap gap-2">
-                  {tool.tags.map((tag) => (
-                    <Link key={tag} href={`/search?tag=${tag}`}>
-                      <span className="text-purple-400 hover:text-purple-300 cursor-pointer text-sm">
-                        #{tag}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
+            {tool.pricing === 'freemium' && (
+              <div className="mt-2 p-3 bg-pink-500/20 border border-pink-500/30 rounded-lg">
+                <p className="text-pink-400 text-sm">
+                  Enjoy <span className="font-bold">100 Free Tokens</span> with Every New Subscription!
+                </p>
               </div>
             )}
-
-            {/* CTA Button */}
-            <div className="pt-4">
-              <Button 
-                asChild 
-                className="w-full bg-white text-black hover:bg-gray-100 font-semibold py-3 text-lg"
-              >
-                <a href={tool.url} target="_blank" rel="noopener noreferrer">
-                  Try Now
-                </a>
-              </Button>
+            {/* Admin-style pricing details */}
+            <div className="mt-2 text-sm text-zinc-400">
+              <span className="font-mono">{getPricingDetails(tool.pricing)}</span>
             </div>
-          </CardContent>
+          </div>
+
+          {/* Categories */}
+          <div>
+            <h3 className="text-white font-semibold mb-3">Categories:</h3>
+            <Link href={`/category/${tool.category}`}>
+              <Badge 
+                variant="secondary" 
+                className="bg-blue-500/20 text-blue-400 border-blue-500/30 hover:bg-blue-500/30 cursor-pointer"
+              >
+                {tool.category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+              </Badge>
+            </Link>
+          </div>
+
+          {/* Tags */}
+          {tool.tags && tool.tags.length > 0 && (
+            <div>
+              <h3 className="text-white font-semibold mb-3">Tags:</h3>
+              <div className="flex flex-wrap gap-2">
+                {tool.tags.map((tag) => (
+                  <Link key={tag} href={`/search?tag=${tag}`}>
+                    <span className="text-purple-400 hover:text-purple-300 cursor-pointer text-sm">
+                      #{tag}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* CTA Button */}
+          <div className="pt-4">
+            <Button 
+              asChild 
+              className="w-full bg-white text-black hover:bg-gray-100 font-semibold py-3 text-lg"
+            >
+              <a href={tool.url} target="_blank" rel="noopener noreferrer">
+                Try Now
+              </a>
+            </Button>
+          </div>
         </div>
-      </Card>
+      </div>
 
       {/* Detailed Information */}
       <Card className="glass-card border-white/10">
