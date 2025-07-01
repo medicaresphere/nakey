@@ -25,13 +25,11 @@ export function Footer() {
   const footerLinks = {
     company: [
       { name: 'About Us', href: '/about' },
-      { name: 'Our Partners', href: '/partners' },
-      { name: 'Media Kit', href: '/media-kit' },
-      { name: 'About Our Authors', href: '/authors' }
+      { name: 'Contact Us', href: '/contact' }
     ],
     resources: [
       { name: 'Add Your Site', href: '/submit' },
-      { name: 'Contact Us', href: '/contact' },
+      { name: 'Categories', href: '/categories' },
       { name: 'Accessibility Statement', href: '/accessibility' },
       { name: 'AI Usage Disclosure', href: '/ai-disclosure' }
     ],
@@ -46,7 +44,7 @@ export function Footer() {
   const socialLinks = [
     { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-blue-400' },
     { name: 'GitHub', icon: Github, href: '#', color: 'hover:text-gray-400' },
-    { name: 'Email', icon: Mail, href: 'mailto:contact@nsfwaitools.com', color: 'hover:text-green-400' }
+    { name: 'Email', icon: Mail, href: 'mailto:contact@nakedifyai.com', color: 'hover:text-green-400' }
   ];
 
   return (
@@ -130,8 +128,8 @@ export function Footer() {
                 <Brain className="w-7 h-7 text-white" />
               </div>
               <div>
-                <span className="font-bold text-xl gradient-text">NSFW AI Tools</span>
-                <p className="text-xs text-zinc-400">Directory</p>
+                <span className="font-bold text-xl gradient-text">NakedifyAI.com</span>
+                <p className="text-xs text-zinc-400">AI Directory</p>
               </div>
             </Link>
             
@@ -229,7 +227,7 @@ export function Footer() {
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-4 flex-wrap">
               <p className="text-zinc-400 text-sm">
-                © {currentYear} NSFW AI Tools Directory. All rights reserved.
+                © {currentYear} NakedifyAI.com. All rights reserved.
               </p>
               <Badge variant="outline" className="text-zinc-500 border-zinc-700 text-xs">
                 Made with <Heart className="w-3 h-3 mx-1 text-red-400" /> for AI enthusiasts

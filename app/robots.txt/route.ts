@@ -19,13 +19,13 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap locations
-Sitemap: https://nsfw-ai-tools.vercel.app/sitemap.xml
-Sitemap: https://nsfw-ai-tools.vercel.app/sitemap-tools.xml
-Sitemap: https://nsfw-ai-tools.vercel.app/sitemap-categories.xml
-Sitemap: https://nsfw-ai-tools.vercel.app/sitemap-tags.xml
+Sitemap: https://nakedifyai.com/sitemap.xml
+Sitemap: https://nakedifyai.com/sitemap-tools.xml
+Sitemap: https://nakedifyai.com/sitemap-categories.xml
+Sitemap: https://nakedifyai.com/sitemap-tags.xml
 
 # Host
-Host: https://nsfw-ai-tools.vercel.app
+Host: https://nakedifyai.com
 `;
 
   return new NextResponse(robotsTxt, {

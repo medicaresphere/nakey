@@ -13,16 +13,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nsfw-ai-tools.vercel.app'),
+  metadataBase: new URL('https://nakedifyai.com'),
   title: {
-    default: 'NSFW AI Tools Directory - Best Adult AI Apps & Services',
-    template: '%s | NSFW AI Tools Directory'
+    default: 'NakedifyAI.com - Best Adult AI Apps & Services',
+    template: '%s | NakedifyAI.com'
   },
   description: 'Discover the best NSFW AI tools, adult chatbots, image generators, and more. Comprehensive directory of AI-powered adult services with reviews and comparisons.',
   keywords: ['NSFW AI', 'Adult AI Tools', 'AI Chatbots', 'AI Image Generator', 'Adult AI Services'],
-  authors: [{ name: 'NSFW AI Tools Directory' }],
-  creator: 'NSFW AI Tools Directory',
-  publisher: 'NSFW AI Tools Directory',
+  authors: [{ name: 'NakedifyAI.com' }],
+  creator: 'NakedifyAI.com',
+  publisher: 'NakedifyAI.com',
   robots: {
     index: true,
     follow: true,
@@ -37,31 +37,31 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://nsfw-ai-tools.vercel.app',
-    siteName: 'NSFW AI Tools Directory',
-    title: 'NSFW AI Tools Directory - Best Adult AI Apps & Services',
+    url: 'https://nakedifyai.com',
+    siteName: 'NakedifyAI.com',
+    title: 'NakedifyAI.com - Best Adult AI Apps & Services',
     description: 'Discover the best NSFW AI tools, adult chatbots, image generators, and more.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'NSFW AI Tools Directory',
+        alt: 'NakedifyAI.com',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NSFW AI Tools Directory - Best Adult AI Apps & Services',
+    title: 'NakedifyAI.com - Best Adult AI Apps & Services',
     description: 'Discover the best NSFW AI tools, adult chatbots, image generators, and more.',
     images: ['/og-image.jpg'],
-    creator: '@nsfwaitools',
+    creator: '@nakedifyai',
   },
   verification: {
     google: 'google-site-verification-code',
   },
   alternates: {
-    canonical: 'https://nsfw-ai-tools.vercel.app',
+    canonical: 'https://nakedifyai.com',
   },
   other: {
     'mobile-web-app-capable': 'yes',

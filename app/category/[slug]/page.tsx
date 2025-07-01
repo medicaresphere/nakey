@@ -72,9 +72,9 @@ export default async function CategoryPageRoute({ params }: Props) {
     // Generate structured data
     const categorySchema = generateCategorySchema(category, tools);
     const breadcrumbSchema = generateBreadcrumbSchema([
-      { name: 'Home', url: 'https://nsfw-ai-tools.vercel.app' },
-      { name: 'Categories', url: 'https://nsfw-ai-tools.vercel.app/categories' },
-      { name: category.name, url: `https://nsfw-ai-tools.vercel.app/category/${category.slug}` }
+      { name: 'Home', url: 'https://nakedifyai.com' },
+      { name: 'Categories', url: 'https://nakedifyai.com/categories' },
+      { name: category.name, url: `https://nakedifyai.com/category/${category.slug}` }
     ]);
 
     const breadcrumbItems = [

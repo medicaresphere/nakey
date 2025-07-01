@@ -5,10 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Eye, Keyboard, Volume2, MousePointer, Smartphone, Mail, Heart } from 'lucide-react';
+import { ClientDate } from '@/components/client-date';
 
 export const metadata: Metadata = {
-  title: 'Accessibility Statement - NSFW AI Tools Directory',
-  description: 'Our commitment to accessibility and inclusive design for all users of NSFW AI Tools Directory.',
+  title: 'Accessibility Statement - NakedifyAI.com',
+  description: 'Our commitment to accessibility and inclusive design for all users of NakedifyAI.com.',
   robots: {
     index: true,
     follow: true,
@@ -96,7 +97,7 @@ export default function AccessibilityPage() {
           </CardHeader>
           <CardContent className="space-y-4 text-zinc-300">
             <p>
-              NSFW AI Tools Directory is committed to ensuring digital accessibility for people with disabilities. 
+              NakedifyAI.com is committed to ensuring digital accessibility for people with disabilities. 
               We are continually improving the user experience for everyone and applying the relevant accessibility standards.
             </p>
             <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-4">
@@ -259,14 +260,14 @@ export default function AccessibilityPage() {
           </CardHeader>
           <CardContent className="space-y-4 text-zinc-300">
             <p>
-              We welcome your feedback on the accessibility of NSFW AI Tools Directory. 
+              We welcome your feedback on the accessibility of NakedifyAI.com. 
               If you encounter any accessibility barriers, please let us know.
             </p>
             
             <div className="bg-green-900/20 border border-green-500/30 rounded-lg p-4">
               <h4 className="font-semibold text-green-400 mb-2">How to Report Issues</h4>
               <ul className="text-sm space-y-1">
-                <li>• Email us at accessibility@nsfwaitools.com</li>
+                <li>• Email us at accessibility@nakedifyai.com</li>
                 <li>• Describe the specific issue you encountered</li>
                 <li>• Include your browser and assistive technology details</li>
                 <li>• We aim to respond within 2 business days</li>
@@ -320,7 +321,7 @@ export default function AccessibilityPage() {
             </div>
 
             <p className="text-sm text-zinc-500">
-              Last updated: {new Date().toLocaleDateString()}
+              Last updated: <ClientDate />
             </p>
           </CardContent>
         </Card>

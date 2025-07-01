@@ -4,10 +4,11 @@ import { Navigation } from '@/components/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { AlertTriangle, Shield, Info, ExternalLink } from 'lucide-react';
+import { ClientDate } from '@/components/client-date';
 
 export const metadata: Metadata = {
-  title: 'Disclaimer - NSFW AI Tools Directory',
-  description: 'Important disclaimer and legal information for NSFW AI Tools Directory users.',
+  title: 'Disclaimer - NakedifyAI.com',
+  description: 'Important disclaimer and legal information for NakedifyAI.com users.',
   robots: {
     index: true,
     follow: true,
@@ -27,7 +28,7 @@ export default function DisclaimerPage() {
           </Badge>
           <h1 className="text-4xl font-bold gradient-text">Disclaimer</h1>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            Important legal information and disclaimers for users of NSFW AI Tools Directory.
+            Important legal information and disclaimers for users of NakedifyAI.com.
           </p>
         </section>
 
@@ -42,8 +43,8 @@ export default function DisclaimerPage() {
             </CardHeader>
             <CardContent className="space-y-4 text-zinc-300">
               <p>
-                The information contained on NSFW AI Tools Directory website is for general information purposes only. 
-                The information is provided by NSFW AI Tools Directory and while we endeavor to keep the information 
+                The information contained on NakedifyAI.com website is for general information purposes only. 
+                The information is provided by NakedifyAI.com and while we endeavor to keep the information 
                 up to date and correct, we make no representations or warranties of any kind, express or implied, 
                 about the completeness, accuracy, reliability, suitability or availability with respect to the website 
                 or the information, products, services, or related graphics contained on the website for any purpose.
@@ -67,11 +68,11 @@ export default function DisclaimerPage() {
             <CardContent className="space-y-4 text-zinc-300">
               <p>
                 Through this website you are able to link to other websites which are not under the control of 
-                NSFW AI Tools Directory. We have no control over the nature, content and availability of those sites. 
+                NakedifyAI.com. We have no control over the nature, content and availability of those sites. 
                 The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.
               </p>
               <p>
-                Every effort is made to keep the website up and running smoothly. However, NSFW AI Tools Directory 
+                Every effort is made to keep the website up and running smoothly. However, NakedifyAI.com 
                 takes no responsibility for, and will not be liable for, the website being temporarily unavailable 
                 due to technical issues beyond our control.
               </p>
@@ -134,7 +135,7 @@ export default function DisclaimerPage() {
             </CardHeader>
             <CardContent className="space-y-4 text-zinc-300">
               <p>
-                In no event shall NSFW AI Tools Directory, nor its directors, employees, partners, agents, 
+                In no event shall NakedifyAI.com, nor its directors, employees, partners, agents, 
                 suppliers, or affiliates, be liable for any indirect, incidental, punitive, consequential, 
                 or similar damages whatsoever arising out of or in any way related to your use of the service.
               </p>
@@ -157,7 +158,7 @@ export default function DisclaimerPage() {
                 acceptance of the new disclaimer.
               </p>
               <p className="text-sm text-zinc-500">
-                Last updated: {new Date().toLocaleDateString()}
+                Last updated: <ClientDate />
               </p>
             </CardContent>
           </Card>

@@ -34,14 +34,14 @@ export function generateToolSchema(tool: AITool): StructuredData {
     dateModified: tool.updated_at || tool.created_at,
     author: {
       '@type': 'Organization',
-      name: 'NSFW AI Tools Directory'
+      name: 'NakedifyAI.com'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'NSFW AI Tools Directory',
+      name: 'NakedifyAI.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://nsfw-ai-tools.vercel.app/logo.png'
+        url: 'https://nakedifyai.com/logo.png'
       }
     }
   };
@@ -64,18 +64,18 @@ export function generateOrganizationSchema(): StructuredData {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'NSFW AI Tools Directory',
-    url: 'https://nsfw-ai-tools.vercel.app',
-    logo: 'https://nsfw-ai-tools.vercel.app/logo.png',
+    name: 'NakedifyAI.com',
+    url: 'https://nakedifyai.com',
+    logo: 'https://nakedifyai.com/logo.png',
     description: 'The most comprehensive directory of adult AI tools and services',
     sameAs: [
-      'https://twitter.com/nsfwaitools',
-      'https://github.com/nsfwaitools'
+      'https://twitter.com/nakedifyai',
+      'https://github.com/nakedifyai'
     ],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      email: 'contact@nsfwaitools.com'
+      email: 'contact@nakedifyai.com'
     }
   };
 }
@@ -86,7 +86,7 @@ export function generateCategorySchema(category: Category, tools: AITool[]): Str
     '@type': 'CollectionPage',
     name: `${category.name} AI Tools`,
     description: category.description,
-    url: `https://nsfw-ai-tools.vercel.app/category/${category.slug}`,
+    url: `https://nakedifyai.com/category/${category.slug}`,
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: tools.length,
@@ -96,7 +96,7 @@ export function generateCategorySchema(category: Category, tools: AITool[]): Str
         item: {
           '@type': 'SoftwareApplication',
           name: tool.name,
-          url: `https://nsfw-ai-tools.vercel.app/ai/${tool.slug}`,
+          url: `https://nakedifyai.com/ai/${tool.slug}`,
           description: tool.description
         }
       }))
@@ -108,15 +108,15 @@ export function generatePersonSchema(): StructuredData {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'NSFW AI Tools Team',
+    name: 'NakedifyAI.com Team',
     jobTitle: 'AI Tools Curator',
     worksFor: {
       '@type': 'Organization',
-      name: 'NSFW AI Tools Directory'
+      name: 'NakedifyAI.com'
     },
-    url: 'https://nsfw-ai-tools.vercel.app/about',
+    url: 'https://nakedifyai.com/about',
     sameAs: [
-      'https://twitter.com/nsfwaitools'
+      'https://twitter.com/nakedifyai'
     ]
   };
 }

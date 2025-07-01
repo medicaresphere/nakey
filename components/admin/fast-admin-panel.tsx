@@ -90,7 +90,7 @@ export function FastAdminPanel() {
               </div>
               <div>
                 <h1 className="font-bold text-white">Admin Panel</h1>
-                <p className="text-xs text-zinc-400">NSFW AI Tools Directory</p>
+                <p className="text-xs text-zinc-400">NakedifyAI.com</p>
               </div>
             </div>
 

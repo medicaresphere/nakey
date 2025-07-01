@@ -8,7 +8,7 @@ import { StructuredDataComponent } from '@/components/seo/structured-data';
 import { Breadcrumbs } from '@/components/seo/breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'AI Tool Categories - NSFW AI Tools Directory',
+  title: 'AI Tool Categories - NakedifyAI.com',
   description: 'Browse all AI tool categories. Find the perfect category for your needs from chatbots to image generators.',
   keywords: [
     'AI categories',
@@ -22,18 +22,18 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://nsfw-ai-tools.vercel.app/categories',
+    canonical: 'https://nakedifyai.com/categories',
   },
   openGraph: {
-    title: 'AI Tool Categories - NSFW AI Tools Directory',
+    title: 'AI Tool Categories - NakedifyAI.com',
     description: 'Browse all AI tool categories. Find the perfect category for your needs.',
     type: 'website',
-    url: 'https://nsfw-ai-tools.vercel.app/categories',
-    siteName: 'NSFW AI Tools Directory',
+    url: 'https://nakedifyai.com/categories',
+    siteName: 'NakedifyAI.com',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Tool Categories - NSFW AI Tools Directory',
+    title: 'AI Tool Categories - NakedifyAI.com',
     description: 'Browse all AI tool categories. Find the perfect category for your needs.',
   },
 };
@@ -57,8 +57,8 @@ export default async function CategoriesPageRoute() {
 
   // Generate structured data
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://nsfw-ai-tools.vercel.app' },
-    { name: 'Categories', url: 'https://nsfw-ai-tools.vercel.app/categories' }
+    { name: 'Home', url: 'https://nakedifyai.com' },
+    { name: 'Categories', url: 'https://nakedifyai.com/categories' }
   ]);
 
   const breadcrumbItems = [

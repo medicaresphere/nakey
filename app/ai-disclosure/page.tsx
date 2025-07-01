@@ -4,9 +4,10 @@ import { Navigation } from '@/components/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Bot, Brain, Eye, Shield, Zap, CheckCircle } from 'lucide-react';
+import { ClientDate } from '@/components/client-date';
 
 export const metadata: Metadata = {
-  title: 'AI Usage Disclosure - NSFW AI Tools Directory',
+  title: 'AI Usage Disclosure - NakedifyAI.com',
   description: 'Transparency about how we use AI technology in our content creation and platform operations.',
   robots: {
     index: true,
@@ -80,7 +81,7 @@ export default function AIDisclosurePage() {
           </CardHeader>
           <CardContent className="space-y-4 text-zinc-300">
             <p>
-              At NSFW AI Tools Directory, we use artificial intelligence as a tool to enhance our content 
+              At NakedifyAI.com, we use artificial intelligence as a tool to enhance our content 
               and improve user experience, while maintaining human oversight and editorial control over all 
               published content.
             </p>
@@ -311,7 +312,7 @@ export default function AIDisclosurePage() {
             </div>
 
             <p className="text-sm text-zinc-500">
-              Last updated: {new Date().toLocaleDateString()}
+              Last updated: <ClientDate />
             </p>
           </CardContent>
         </Card>

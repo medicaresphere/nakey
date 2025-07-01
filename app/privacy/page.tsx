@@ -6,8 +6,8 @@ import { Badge } from '@/components/ui/badge';
 import { Shield, Eye, Cookie, Database, Mail, Lock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - NSFW AI Tools Directory',
-  description: 'Privacy policy and data protection information for NSFW AI Tools Directory users.',
+  title: 'Privacy Policy - NakedifyAI.com',
+  description: 'Privacy policy and data protection information for NakedifyAI.com users.',
   robots: {
     index: true,
     follow: true,
@@ -295,7 +295,7 @@ export default function PrivacyPage() {
                   <Mail className="w-5 h-5 text-blue-400" />
                   <h5 className="font-medium text-blue-400">Privacy Contact</h5>
                 </div>
-                <p className="text-sm">Email: privacy@nsfwaitools.com</p>
+                <p className="text-sm">Email: privacy@nakedifyai.com</p>
                 <p className="text-sm">Response time: Within 48 hours</p>
               </div>
 

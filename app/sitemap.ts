@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getTools, getCategories, getTags } from '@/lib/supabase';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://nsfw-ai-tools.vercel.app';
+  const baseUrl = 'https://nakedifyai.com';
   
   try {
     const [tools, categories, tags] = await Promise.all([

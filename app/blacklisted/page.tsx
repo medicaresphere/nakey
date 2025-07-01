@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Shield, AlertTriangle, Ban, Mail, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Blacklisted Sites - NSFW AI Tools Directory',
-  description: 'List of blacklisted sites and our content moderation policies for NSFW AI Tools Directory.',
+  title: 'Blacklisted Sites - NakedifyAI.com',
+  description: 'List of blacklisted sites and our content moderation policies for NakedifyAI.com.',
   robots: {
     index: true,
     follow: true,

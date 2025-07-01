@@ -4,10 +4,11 @@ import { Navigation } from '@/components/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { DollarSign, ExternalLink, Info, Shield } from 'lucide-react';
+import { ClientDate } from '@/components/client-date';
 
 export const metadata: Metadata = {
-  title: 'Affiliate Disclosure - NSFW AI Tools Directory',
-  description: 'Transparency about affiliate relationships and monetization on NSFW AI Tools Directory.',
+  title: 'Affiliate Disclosure - NakedifyAI.com',
+  description: 'Transparency about affiliate relationships and monetization on NakedifyAI.com.',
   robots: {
     index: true,
     follow: true,
@@ -42,7 +43,7 @@ export default function AffiliateDisclosurePage() {
             </CardHeader>
             <CardContent className="space-y-4 text-zinc-300">
               <p>
-                NSFW AI Tools Directory participates in various affiliate marketing programs. This means that 
+                NakedifyAI.com participates in various affiliate marketing programs. This means that 
                 when you click on certain links to AI tools and services on our website and make a purchase 
                 or sign up, we may receive a commission at no additional cost to you.
               </p>
@@ -209,7 +210,7 @@ export default function AffiliateDisclosurePage() {
                 information about our monetization practices.
               </p>
               <p className="text-sm text-zinc-500">
-                Last updated: {new Date().toLocaleDateString()}
+                Last updated: <ClientDate />
               </p>
             </CardContent>
           </Card>

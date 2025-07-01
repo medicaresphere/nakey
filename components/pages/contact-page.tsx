@@ -71,21 +71,21 @@ export function ContactPage() {
       title: 'Email Support',
       description: 'Get help with any questions or issues',
       icon: Mail,
-      contact: 'support@nsfwaitools.com',
+      contact: 'support@nakedifyai.com',
       color: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'Business Inquiries',
       description: 'Partnership and collaboration opportunities',
       icon: Building,
-      contact: 'business@nsfwaitools.com',
+      contact: 'business@nakedifyai.com',
       color: 'from-green-500 to-emerald-500'
     },
     {
       title: 'Community',
       description: 'Join our Discord community',
       icon: Users,
-      contact: 'discord.gg/nsfwaitools',
+      contact: 'discord.gg/nakedifyai',
       color: 'from-purple-500 to-violet-500'
     },
     {
@@ -326,7 +326,7 @@ export function ContactPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <p className="text-zinc-300 font-medium">NSFW AI Tools Directory</p>
+                <p className="text-zinc-300 font-medium">NakedifyAI.com</p>
                 <p className="text-sm text-zinc-400">
                   Remote-first company<br />
                   Serving users worldwide<br />

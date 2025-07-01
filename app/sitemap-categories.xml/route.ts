@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { getCategories } from '@/lib/supabase';
 
 export async function GET() {
-  const baseUrl = 'https://nsfw-ai-tools.vercel.app';
+  const baseUrl = 'https://nakedifyai.com';
   
   try {
     const categories = await getCategories();

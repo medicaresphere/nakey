@@ -56,7 +56,7 @@ export function Navigation() {
               <Brain className="w-5 h-5 text-white" />
             </div>
             <span className="font-bold text-lg gradient-text">
-              NSFW AI Tools
+              NakedifyAI.com
             </span>
           </Link>
 

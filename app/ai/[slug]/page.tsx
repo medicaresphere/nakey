@@ -55,10 +55,10 @@ export default async function ToolDetailPageRoute({ params }: Props) {
     // Generate structured data
     const toolSchema = generateToolSchema(tool);
     const breadcrumbSchema = generateBreadcrumbSchema([
-      { name: 'Home', url: 'https://nsfw-ai-tools.vercel.app' },
-      { name: 'AI Tools', url: 'https://nsfw-ai-tools.vercel.app' },
-      { name: tool.category.replace('-', ' '), url: `https://nsfw-ai-tools.vercel.app/category/${tool.category}` },
-      { name: tool.name, url: `https://nsfw-ai-tools.vercel.app/ai/${tool.slug}` }
+      { name: 'Home', url: 'https://nakedifyai.com' },
+      { name: 'AI Tools', url: 'https://nakedifyai.com' },
+      { name: tool.category.replace('-', ' '), url: `https://nakedifyai.com/category/${tool.category}` },
+      { name: tool.name, url: `https://nakedifyai.com/ai/${tool.slug}` }
     ]);
 
     const breadcrumbItems = [
